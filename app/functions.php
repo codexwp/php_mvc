@@ -95,7 +95,7 @@ function get_user(){
 
 }
 
-function set_user(){
-
+function set_user($id){
+    $_SESSION['user_id'] = $id;
 }
 
