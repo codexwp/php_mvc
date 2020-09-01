@@ -4,7 +4,7 @@ add_key('title','Welcome to Neo');
 start_content();
 ?>
 
-Welcome to content <?=$data?>
+Welcome  to content <?=$data?>
 
 
 <?php end_content(); ?>

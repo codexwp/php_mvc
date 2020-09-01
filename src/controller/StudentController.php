@@ -19,7 +19,7 @@ class StudentController extends Controller
     public function test(){
         //$a = new User();
 
-        M_USER::find(1);
+        M_USER::test();
     }
 
 }

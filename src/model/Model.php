@@ -12,14 +12,21 @@ use Mysqli;
 class Model
 {
     private $connection=null;
+    protected $table;
 
     function __construct()
     {
         $this->openConnection();
+        $this->setTableName();
     }
     function __destruct()
     {
         $this->closeConnection();
+    }
+
+    private function setTableName(){
+        $class = get_called_class();
+        $this->table = explode('\\', $class)[2];
     }
 
     private function openConnection(){
@@ -39,10 +46,15 @@ class Model
         }
     }
 
-
     protected function select($sql){
         $data = (object)$this->connection->query($sql)->fetch_all(MYSQLI_ASSOC);
         return $data;
+    }
+
+
+    public function find($id){
+        $sql = "SELECT * FROM ".$this->table." WHERE id=".$id." LIMIT 1";
+        return $this->select($sql);
     }
 
 

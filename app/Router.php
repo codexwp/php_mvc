@@ -44,7 +44,7 @@ class Router
 
     //$callable = It can be callable function or array. Example. ControllerName@methodName
 
-    public function route($method, $route, $callable) {
+    public function route($method, $route, $callable, $middleware = false) {
         try {
 
             $method = strtolower($method);
@@ -57,6 +57,8 @@ class Router
                 $this->is_found = true;
 
                 if ($method == $this->request_method) {
+
+                    $this->middleware($middleware);
 
                     if (is_callable($callable))
                         call_user_func_array($callable, array());
@@ -76,7 +78,7 @@ class Router
 
 
     //$cm = Controller and Method. Example IndexController@show
-    protected function execute($cm){
+    private function execute($cm){
 
         list($controller, $method) = explode('@', $cm);
 
@@ -101,5 +103,28 @@ class Router
 
     }
 
+
+    private function middleware($names){
+        if(!$names)
+            return;
+        if(is_string($names)){
+            if(!method_exists($this,$names))
+                throw new Exception($names. " Middleware is not found.");
+            $this->$names();
+        }
+        else if(is_array($names)){
+            foreach ($names as $k => $v){
+                if(!method_exists($this,$v))
+                    throw new Exception($v. " Middleware is not found.");
+                $this->$v();
+            }
+        }
+
+    }
+
+    private function auth(){
+        if(get_user()==false)
+            throw new Exception('You are not logged in');
+    }
 
 }

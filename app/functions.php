@@ -79,3 +79,23 @@ function include_layout($layout){
     require_once $layout_uri;
 }
 
+function get_user(){
+
+    if(!isset($_SESSION['user_id']) || !is_numeric($_SESSION['user_id']) || empty($_SESSION['user_id']))
+        return false;
+
+    $id = $_SESSION['user_id'];
+    $model = 'src\model\\'.USER_TABLE;
+    $user = (new $model)->find($id);
+
+    if(!isset($user->id))
+        return false;
+    else
+        return $user;
+
+}
+
+function set_user(){
+
+}
+
