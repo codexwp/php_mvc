@@ -57,7 +57,7 @@ $router->route('POST', '/dashboard', 'TestController@dashboard', 'auth');
 ```
 
 ### Controller Example
-Create controller in src/controller folder like
+Create controller in src/controller folder like the following one
 ```
 namespace src\controller;
 
@@ -74,7 +74,31 @@ class TestController extends Controller
 	}
 }
 ```
-### Model
+### Model Example
+Create controller in src/model folder like the following one. But database table name and model name must be same.
+
+```
+namespace src\model;
+
+
+class USER extends Model
+{
+
+    function __construct()
+    {
+        parent::__construct();
+    }
+
+	function getUser($role_id)
+	{
+		//write your codes
+		return $this->where(['role_id'=>$role_id])->get();
+	}
+}
+```
+Model functions
+* select($params) - $params is an array. It contains the table's column name
+
 ### View
 ### Query
 ### Common Functions
