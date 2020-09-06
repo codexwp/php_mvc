@@ -112,6 +112,7 @@ Model functions
 * limit($start, $end) = It set the limit the number of rows.
 
 	Example-
+	
 		limit(5) = limit only first 5 row
 		limit(0,4) = limit from 0 to 4 row
 		limit(5,10) = limit from row index 5 to 10
@@ -121,6 +122,7 @@ Model functions
 * update($params) = It updates the data in a table. $params is an array that contans the fieldname and field value. Before update, you have to run where function.
 
 	Example-
+	
 		$this->where(['id'=>5])->update(['name'=>'new name', 'password'=>'new password'])
 		
 * delete() = It delete records from table. Like update function, run where function then add delete function.
