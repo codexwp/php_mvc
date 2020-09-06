@@ -40,7 +40,7 @@ define( 'DB_PASSWORD', 'database password' );
 ## Usages
 
 ### Routing Example
-Create route in route.php
+Create route in route.php (root folder)
 
 $route->route('method','uri','Controller@Method','Middleware')
 
@@ -51,12 +51,29 @@ $router->route('GET', '/test', function() {
     echo "Hello World" ;
 });
 
-$router->route('POST', '/', 'UserController@login');
+$router->route('POST', '/', 'TestController@login');
 
-$router->route('POST', '/dashboard', 'UserController@dashboard', 'auth');
+$router->route('POST', '/dashboard', 'TestController@dashboard', 'auth');
 ```
 
-### Controller
+### Controller Example
+Create controller in src/controller folder like
+```
+namespace src\controller;
+
+class TestController extends Controller
+{
+    function __construct()
+    {
+        parent::__construct();
+    }
+	
+	function login()
+	{
+		//Write your codes
+	}
+}
+```
 ### Model
 ### View
 ### Query
