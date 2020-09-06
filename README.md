@@ -41,16 +41,19 @@ define( 'DB_PASSWORD', 'database password' );
 
 ### Routing Example
 Create route in route.php
-$route->route("METHOD","URI","Controller@Method","Middleware")
 
-METHOD = 'get', 'post', 'put', 'patch', 'delete'
+$route->route('method','uri','Controller@Method','Middleware')
+
+method = 'get', 'post', 'put', 'patch', 'delete'
 
 ```
-$router->route("GET", "/test", function() {
-    echo "You found person " ;
+$router->route('GET', '/test', function() {
+    echo "Hello World" ;
 });
 
-$router->route("POST", "/", 'UserController@login');
+$router->route('POST', '/', 'UserController@login');
+
+$router->route('POST', '/dashboard', 'UserController@dashboard', 'auth');
 ```
 
 ### Controller
