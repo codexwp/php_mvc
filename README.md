@@ -150,7 +150,7 @@ Model functions
 
 
 ### View
-Create a layout in src/view folder. sample_layout.php -
+Create a layout in src/view folder. layout_sample.php -
 ```
 <html>
 <head>
@@ -159,12 +159,12 @@ Create a layout in src/view folder. sample_layout.php -
 </head>
 
 <body>
-<?=include_layout("layout.default.header")?>
+<?=include_layout("layout_header")?>
 <?=get_content()?>
 </body>
 </html>
 ```
-Create a view file in src/view folder. sample_view.php-
+Create a view file in src/view folder. view_sample.php-
 ```
 <?php
 extend_layout("layout_name");
