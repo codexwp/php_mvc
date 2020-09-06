@@ -149,7 +149,7 @@ Model functions
 * first() = It only returns the first record of the query.
 
 
-### View
+### View Example
 Create a layout in src/view folder. layout_sample.php -
 ```
 <html>
@@ -185,5 +185,5 @@ end_content();
 
 ## License
 
-This project is licensed under **SUN CORPORATION LIMITED**
+This project is licensed under **ＳＵＮ株式会社**
 
