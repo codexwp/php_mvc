@@ -92,6 +92,12 @@ class USER extends Model
 	function getUser($role_id)
 	{
 		//write your codes
+		//$this->select(array)->where(array)->orderBy(array)->limit(value)->get
+		//$this->where(array)->update(array)
+		//$this->where(array)->delete()
+		//$this->create(array)
+		//$this->find(id)
+		
 		return $this->where(['role_id'=>$role_id])->get();
 	}
 }
@@ -108,14 +114,14 @@ Model functions
 
 		Similarly we can use <, <=, >= operators
 		
-* orderBy($params) = It set the orders of row data and returns model object. $params is an array. Example array ['id'=>'desc', 'name'=>'asc']
-* limit($start, $end) = It set the limit the number of rows.
+* orderBy($params) = It set the orders of record data and returns model object. $params is an array. Example array ['id'=>'desc', 'name'=>'asc']
+* limit($start, $end) = It set the limit the number of records.
 
 	Example-
 	
-		limit(5) = limit only first 5 row
-		limit(0,4) = limit from 0 to 4 row
-		limit(5,10) = limit from row index 5 to 10
+		limit(5) = limit only first 5 records
+		limit(0,4) = limit records from index 0 to 4
+		limit(5,10) = limit from records index 5 to 10
 		
 * get() = It fetches data from database and returns as object data array.
 * create($params) = It inserts new row in a table. $params is an array like ['field name 1'=>field value 1, 'field name 2'=>field value 2]
@@ -126,7 +132,11 @@ Model functions
 		$this->where(['id'=>5])->update(['name'=>'new name', 'password'=>'new password'])
 		
 * delete() = It delete records from table. Like update function, run where function then add delete function.
-
+* count() = It counts the number of records and return integer.
+* find(id) = It only search by id of a table and return data of record.
+* getAll() = It returns all the records of a table.
+* raw($str) = It executes the raw SQL. $str is a string and returns model object.
+* first() = It only returns the first record of the query.
 
 
 ### View
