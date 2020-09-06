@@ -150,16 +150,40 @@ Model functions
 
 
 ### View
-### Query
+Create a layout in src/view folder. Sample-
+```
+<html>
+<head>
+<title><?=get_key('title')?>
+</title>
+</head>
+
+<body>
+<?=include_layout("layout.default.header")?>
+<?=get_content()?>
+</body>
+</html>
+```
+Create a view file in src/view folder. Sample-
+```
+<?php
+extend_layout("layout_name");
+add_key('title','Title Name');
+add_key('page-header','アカウント');
+start_content();
+?>
+Write your html and php codes.
+<?php
+end_content();
+?>
+```
+
 ### Common Functions
 
 
 
-## Authors
-
-* **SUN CORPORATION LIMITED**
 
 ## License
 
-This project is licensed under the SUN License
+This project is licensed under **SUN CORPORATION LIMITED**
 
