@@ -37,7 +37,7 @@ define( 'DB_PASSWORD', 'database password' );
 
 
 
-## Usages
+## Developer Usages
 
 ### Routing Example
 Create route in route.php (root folder)
