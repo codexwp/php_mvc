@@ -38,6 +38,7 @@ define( 'DB_PASSWORD', 'database password' );
 
 
 ## Developer Usages
+This is a customized MVC php framework.
 
 ### Routing Example
 Create route in route.php (root folder)
