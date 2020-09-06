@@ -99,13 +99,14 @@ class USER extends Model
 Model functions
 * select($params) - $params is an array that contains the table's column name. For example- array('id','name','email') and returns model object.
 * where($params) - $params is an array that contains the conditions of query and returns model object.
-For example-
 
-['id'=>5,'role_id'=>2]  = "...WHERE id=5 and role_id=2"
+	For example-
 
-['age'=>'> 25', 'or'=>['role_id'=>2, 'role_id'=>4]] =  "...WHERE age>25 and (role_id=2 or role_id=4)"
+		['id'=>5,'role_id'=>2]  = "...WHERE id=5 and role_id=2"
 
-Similarly we can use <, <=, >= operators
+		['age'=>'> 25', 'or'=>['role_id'=>2, 'role_id'=>4]] =  "...WHERE age>25 and (role_id=2 or role_id=4)"
+
+		Similarly we can use <, <=, >= operators
 
 
 
