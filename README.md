@@ -68,10 +68,19 @@ class TestController extends Controller
         parent::__construct();
     }
 	
-	function login()
+	public function login()
 	{
 		//Write your codes
 	}
+	
+	public function users()
+	{
+		//Call model if need
+		$data = 'test data';
+		return view('admin.users', array('data'=>$data)); 
+		//data variable is available in view file.
+	}
+	
 }
 ```
 ### Model Example
