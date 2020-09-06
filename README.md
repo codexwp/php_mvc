@@ -96,7 +96,7 @@ class USER extends Model
 	}
 }
 ```
-Model functions
+####Model functions
 * select($params) - $params is an array that contains the table's column name. For example- array('id','name','email') and returns model object.
 * where($params) - $params is an array that contains the conditions of query and returns model object.
 
