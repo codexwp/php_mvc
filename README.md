@@ -147,6 +147,7 @@ Model functions
 * getAll() = It returns all the records of a table.
 * raw($str) = It executes the raw SQL. $str is a string and returns model object.
 * first() = It only returns the first record of the query.
+* toSQL() = It returns the SQL statement of query.
 
 
 ### View Example
@@ -179,7 +180,10 @@ end_content();
 ```
 
 ### Common Functions
-
+* url($uri) = Returns the full url. Example- url('/test/welcome') returns http://www.example.com/test/welcome/
+* redirect($uri) = Http redirect to that uri.
+* back() = Redirect to last visited page-header
+* set_flash($type, $message) = Set session in flash variable. $type='success','error','warning','info'
 
 
 
